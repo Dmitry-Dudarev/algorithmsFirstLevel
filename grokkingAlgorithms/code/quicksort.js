@@ -61,8 +61,27 @@ function findMax(arr) {
 }
 
 // псевдокод базового случая быстрой сортировки
-function quicksort(arr) {
+function quickSort(arr) {
   if (arr.length < 2) {
     return arr
+  }
+  // выделяем ОПОРНЫЙ ЭЛЕМЕНТ
+  let pivot = arr[0];
+  // получим массив элементов, которые МЕНЬШЕ опорного
+  let less = arr.slice(1).filter(i => i < pivot);
+  // получим массив элементов, которые БОЛЬШЕ опорного 
+  let greater = arr.slice(1).filter(i => i > pivot);
+
+  return [...quickSort(less), pivot, ...quickSort(greater)];
+}
+
+const quickSortArr = [15, 2, 18, 0, 4, 12];
+
+// console.log(quickSort(quickSortArr));
+
+// Функция последовательного перебора элементов
+function showItems(arr) {
+  for (let item of arr) {
+    console.log(item);
   }
 }
