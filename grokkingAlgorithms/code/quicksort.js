@@ -85,3 +85,16 @@ function showItems(arr) {
     console.log(item);
   }
 }
+
+// задача на создание таблицы умножения
+// для элементов массива
+function multiTable(arr) {
+  for (let i of arr) {
+    for (let j of arr) {
+      console.log(`${i} * ${j} = ${i * j}`)
+    }
+  }
+}
+
+// multiTable([2, 3, 5, 10])
+
