@@ -113,4 +113,3 @@ function dijkstra(graph, costs, parents) {
   return { costs, parents };
 }
 
-dijkstra(graph, costs, parents)
