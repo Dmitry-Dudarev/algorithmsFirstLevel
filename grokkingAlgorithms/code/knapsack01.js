@@ -17,10 +17,11 @@ function knapsack01(items, W) {
 
   for (let i = 1; i <= n; i++) {
     const { weight, value } = items[i - 1];
+
     for (let w = 0; w <= W; w++) {
-      dp[i][w] = dp[i - 1][w]; // не берём предмет i
+      dp[i][w] = dp[i - 1][w];
       if (weight <= w) {
-        const take = value + dp[i - 1][w - weight]; // берём предмет i
+        const take = value + dp[i - 1][w - weight];
         if (take > dp[i][w]) dp[i][w] = take;
       }
     }
@@ -28,6 +29,7 @@ function knapsack01(items, W) {
   return dp[n][W]; // максимальная ценность
 }
 
+knapsack01(items, capacity)
 
 // максимальная стоимость и восстановление предметов
 function knapsack01WithItems(items, W) {
