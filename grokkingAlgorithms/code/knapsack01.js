@@ -59,3 +59,5 @@ function knapsack01WithItems(items, W) {
   taken.reverse();
   return { maxValue: dp[n][W], taken };
 }
+
+// console.log(knapsack01WithItems(items, capacity))
